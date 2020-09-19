@@ -13,7 +13,7 @@ I modified the parser args and the return values to suit my needs and reduce the
 I also removed the lines of codes I didn't need, modified it to not draw boundary boxes and only get labels using OpenCV.
 
 # How to Set Up and Run TensorFlow Lite Object Detection Models on your System
-Setting up TensorFlow Lite has been made easier with virutal environemnt. I have installed the required packages and the python version I used in a virtual environment! 
+Setting up TensorFlow Lite has been made easier with virutal environemnt. I have installed the required packages and the python version (python3.7) I used in a virtual environment! 
 These are the steps needed to get started:
 
 1. Clone the repository
