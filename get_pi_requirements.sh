@@ -17,11 +17,17 @@ pip3 install opencv-python==3.4.6.27
 #pip3 install tensorflow
 
 version=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')
+os_name=$(python -c 'import os; print(os.name)')
+echo $os_name
 
 if [ $version == "3.7" ]; then
-pip3 install https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp37-cp37m-linux_armv7l.whl
+    if [ $os_name == "nt" ]; then
+        pip3 install https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp37-cp37m-win_amd64.whl
+    else
+        pip3 install https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp37-cp37m-linux_armv7l.whl
+    fi
 fi
-
+    
 if [ $version == "3.5" ]; then
 pip3 install https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp35-cp35m-linux_armv7l.whl
 fi
