@@ -28,5 +28,9 @@ python -u traffic_final_demo.py --operator=Mem --time=2
 ```
 
 The -u argument runs the program in batch mode
+
 The --operator argument tells the script the name of the person running the program. **Replace `Mem` with your other name of choice**
+
 The --time argument tells the script the number of time you want the traffic controller to run iteratively. **Replace `2` with other positive number integer**
+
+The program was modified for this demo to output a traffic control light sequence in plain english which would have been visible with Raspberry pi and LEDs. *The traffic_final.py file works with LEDs in Raspberry pi to controller LED traffic lights*
