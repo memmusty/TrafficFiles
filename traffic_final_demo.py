@@ -54,7 +54,7 @@ import sys
 #from gpiozero import LED
 #from picamera import PiCamera
 from time import sleep
-from Mem_detection_image import objectsCount
+from Mem_detection_image_demo import objectsCount
 
 ##setting up the camera
 #camera = PiCamera()
@@ -85,7 +85,7 @@ def getImageCount():
     CarCounts = {}
 
     #calls the object detection model to process all the images in the Traffic_image folder and save the returned value in labels
-    labels = objectsCount()
+    labels = objectsCount(MODEL_NAME, GRAPH_NAME, LABELMAP_NAME, min_conf_threshold, use_TPU, IM_NAME, IM_DIR)
 
     #save the items in labels into carCounts with descriptive dict keys
     for key, val in labels.items():
