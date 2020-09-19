@@ -41,7 +41,7 @@ def objectsCount():
     # Define and parse input arguments
     parser = argparse.ArgumentParser()
     parser.add_argument('--modeldir', help='Folder the .tflite file is located in',
-                        default='TrafficFiles/Sample_TFLite_model')
+                        default='Sample_TFLite_model')
     parser.add_argument('--graph', help='Name of the .tflite file, if different than detect.tflite',
                         default='detect.tflite')
     parser.add_argument('--labels', help='Name of the labelmap file, if different than labelmap.txt',
@@ -51,9 +51,9 @@ def objectsCount():
     parser.add_argument('--image', help='Name of the single image to perform detection on. To run detection on multiple images, use --imagedir',
                         default=None)
     parser.add_argument('--imagedir', help='Name of the folder containing images to perform detection on. Folder must contain only images.',
-                        default='TrafficFiles/Traffic_images')
+                        default='Traffic_images')
     parser.add_argument('--edgetpu', help='Use Coral Edge TPU Accelerator to speed up detection',
-                        default=True)
+                        default=True) #change to False or None when GPU is not used
 
     args = parser.parse_args()
 
@@ -62,7 +62,6 @@ def objectsCount():
     LABELMAP_NAME = args.labels
     min_conf_threshold = float(args.threshold)
     use_TPU = args.edgetpu
-    GRAPH_NAME = 'edgetpu.tflite'
 
 
     # Parse input image name and directory.
